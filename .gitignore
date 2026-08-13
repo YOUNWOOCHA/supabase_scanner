@@ -1,0 +1,7 @@
+*.csv
+*.xlsx
+.env
+__pycache__/
+.pytest_cache/
+input/urls.txt
+_repo/

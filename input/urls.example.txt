@@ -1,0 +1,4 @@
+# Copy this file to input/urls.txt and add one public URL per line.
+# Blank lines and lines beginning with # are ignored.
+#
+# https://example.com

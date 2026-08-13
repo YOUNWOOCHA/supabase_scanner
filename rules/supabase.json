@@ -1,0 +1,110 @@
+{
+  "SUPABASE_REFERENCE": {
+    "pattern": "\\bsupabase\\b",
+    "severity": "LOW",
+    "confidence": "LOW",
+    "description": "Supabase 사용 언급",
+    "positive_keywords": {},
+    "negative_keywords": {},
+    "strong_negative_keywords": {"documentation": -2, "tutorial": -2, "example": -2, "sample": -2}
+  },
+  "SUPABASE_PROJECT_URL": {
+    "pattern": "https://[a-z0-9]{20}\\.supabase\\.co",
+    "severity": "LOW",
+    "confidence": "HIGH",
+    "description": "Supabase 프로젝트 URL 지문",
+    "positive_keywords": {"supabase": 1},
+    "negative_keywords": {},
+    "strong_negative_keywords": {"example": -2, "sample": -2, "dummy": -2, "placeholder": -2}
+  },
+  "SUPABASE_PUBLISHABLE_KEY": {
+    "pattern": "sb_publishable_[A-Za-z0-9_-]{16,}",
+    "severity": "LOW",
+    "confidence": "HIGH",
+    "description": "공개 사용이 허용되는 Supabase publishable key",
+    "positive_keywords": {"supabase": 1, "publishable": 1},
+    "negative_keywords": {},
+    "strong_negative_keywords": {"example": -2, "sample": -2, "placeholder": -2}
+  },
+  "SUPABASE_SECRET_KEY": {
+    "pattern": "sb_secret_[A-Za-z0-9_-]{16,}",
+    "severity": "CRITICAL",
+    "confidence": "HIGH",
+    "description": "프런트엔드에 노출되면 안 되는 Supabase secret key 후보",
+    "positive_keywords": {"supabase": 1, "secret": 2},
+    "negative_keywords": {"test": -1, "demo": -1},
+    "strong_negative_keywords": {"example": -2, "sample": -2, "dummy": -2, "placeholder": -2}
+  },
+  "LABELED_SECRET": {
+    "pattern": "(?:SUPABASE_SERVICE_ROLE_KEY|SUPABASE_SECRET_KEY|DATABASE_URL|POSTGRES_PASSWORD|JWT_SECRET|CLIENT_SECRET)\\s*[:=]\\s*[\\\"']?[^\\s\\\"'`,;}{]{8,}",
+    "severity": "CRITICAL",
+    "confidence": "HIGH",
+    "description": "민감한 환경변수 이름에 값이 할당된 후보",
+    "positive_keywords": {"service_role": 2, "secret": 2, "password": 2, "database": 1},
+    "negative_keywords": {"test": -1, "demo": -1},
+    "strong_negative_keywords": {"example": -2, "sample": -2, "dummy": -2, "your_": -2, "placeholder": -2}
+  },
+  "POSTGRES_CONNECTION_URI": {
+    "pattern": "postgres(?:ql)?://[^\\s\\\"'<>]{8,}",
+    "severity": "CRITICAL",
+    "confidence": "HIGH",
+    "description": "Postgres 연결 문자열 후보",
+    "positive_keywords": {"database": 1, "postgres": 1, "password": 2},
+    "negative_keywords": {"test": -1, "demo": -1},
+    "strong_negative_keywords": {"example": -2, "sample": -2, "user:password": -2, "localhost": -2}
+  },
+  "JWT": {
+    "pattern": "eyJ[A-Za-z0-9_-]{10,}\\.eyJ[A-Za-z0-9_-]{10,}\\.[A-Za-z0-9_-]{10,}",
+    "severity": "HIGH",
+    "confidence": "MEDIUM",
+    "description": "JWT 형식 문자열",
+    "positive_keywords": {"authorization": 2, "token": 1, "bearer": 2, "supabase": 1},
+    "negative_keywords": {"test": -1, "demo": -1},
+    "strong_negative_keywords": {"example": -2, "sample": -2, "dummy": -2, "fake": -2, "placeholder": -2}
+  },
+  "PRIVATE_KEY": {
+    "pattern": "-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----",
+    "severity": "CRITICAL",
+    "confidence": "HIGH",
+    "description": "Private Key 헤더",
+    "positive_keywords": {"private": 2, "secret": 2, "key": 1},
+    "negative_keywords": {"test": -1, "demo": -1},
+    "strong_negative_keywords": {"example": -2, "sample": -2, "dummy": -2, "fake": -2}
+  },
+  "BEARER_TOKEN": {
+    "pattern": "Bearer\\s+[A-Za-z0-9._~-]{20,}",
+    "severity": "HIGH",
+    "confidence": "MEDIUM",
+    "description": "Bearer access token 후보",
+    "positive_keywords": {"authorization": 2, "access_token": 2, "token": 1},
+    "negative_keywords": {"test": -1, "demo": -1},
+    "strong_negative_keywords": {"example": -2, "sample": -2, "dummy": -2, "placeholder": -2}
+  },
+  "EMAIL": {
+    "pattern": "(?<![A-Za-z0-9._%+-])[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}(?![A-Za-z0-9.-])",
+    "severity": "MEDIUM",
+    "confidence": "LOW",
+    "description": "이메일 주소 형식",
+    "positive_keywords": {"customer": 2, "user": 1, "email": 1, "개인정보": 2},
+    "negative_keywords": {"contact": -1, "support": -1},
+    "strong_negative_keywords": {"example.com": -2, "team@example": -2, "noreply": -2}
+  },
+  "PHONE_NUMBER": {
+    "pattern": "(?<![0-9])(?:\\+?82[- .]?)?0?1[016789][- .]?[0-9]{3,4}[- .]?[0-9]{4}(?![0-9])",
+    "severity": "MEDIUM",
+    "confidence": "LOW",
+    "description": "대한민국 휴대전화 번호 형식 후보",
+    "positive_keywords": {"phone": 1, "mobile": 1, "customer": 2, "user": 1, "전화번호": 2, "휴대전화": 2},
+    "negative_keywords": {"contact": -1, "support": -1},
+    "strong_negative_keywords": {"example": -2, "sample": -2, "010-0000-0000": -2, "010-1234-5678": -2}
+  },
+  "IP_ADDRESS": {
+    "pattern": "(?<![0-9])(?:25[0-5]|2[0-4][0-9]|1?[0-9]{1,2})(?:\\.(?:25[0-5]|2[0-4][0-9]|1?[0-9]{1,2})){3}(?![0-9])",
+    "severity": "LOW",
+    "confidence": "LOW",
+    "description": "IPv4 주소 형식",
+    "positive_keywords": {"server": 1, "database": 1, "host": 1, "internal": 2},
+    "negative_keywords": {"version": -1},
+    "strong_negative_keywords": {"127.0.0.1": -2, "0.0.0.0": -2, "192.0.2.": -2}
+  }
+}
