@@ -5,3 +5,8 @@ __pycache__/
 .pytest_cache/
 input/urls.txt
 _repo/
+node_modules/
+.artifact-work/
+output/*.log
+output/*.ndjson
+output/overnight_pid.txt

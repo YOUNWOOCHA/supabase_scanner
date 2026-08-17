@@ -1,0 +1,16 @@
+# 한 줄에 Brave 검색어 하나를 적습니다. 빈 줄과 # 주석은 무시됩니다.
+# 실제 누적 결과에서 적중률이 높았던 공개 Supabase 단서를 반드시 포함합니다.
+# 기능 문구만으로 일반 예약·쇼핑·포털 앱을 넓게 수집하지 않습니다.
+
+site:lovable.app "supabase.co" -inurl:blog -inurl:docs -inurl:tutorial -template -github
+site:lovable.app ("powered by supabase" OR "built with supabase") -inurl:blog -inurl:docs -template
+site:lovable.app supabase ("magic link" OR "email not confirmed" OR "invalid login credentials") -inurl:blog -inurl:docs -template
+site:netlify.app "supabase.co" -inurl:blog -inurl:docs -inurl:tutorial -template -github
+site:netlify.app ("powered by supabase" OR "built with supabase") -inurl:blog -inurl:docs -template
+site:netlify.app supabase ("magic link" OR "email not confirmed" OR "invalid login credentials") -inurl:blog -inurl:docs -template
+site:pages.dev "supabase.co" -inurl:blog -inurl:docs -inurl:tutorial -template -github
+site:pages.dev ("powered by supabase" OR "built with supabase") -inurl:blog -inurl:docs -template
+site:pages.dev supabase ("magic link" OR "email not confirmed" OR "invalid login credentials") -inurl:blog -inurl:docs -template
+site:vercel.app "supabase.co" -inurl:blog -inurl:docs -inurl:tutorial -template -github
+site:vercel.app ("powered by supabase" OR "built with supabase") -inurl:blog -inurl:docs -template
+site:vercel.app supabase ("magic link" OR "email not confirmed" OR "invalid login credentials") -inurl:blog -inurl:docs -template

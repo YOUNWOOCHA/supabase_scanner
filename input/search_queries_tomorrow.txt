@@ -1,0 +1,82 @@
+# 내일 보고서용 집중 검색어입니다. 비밀키 값을 직접 검색하지 않습니다.
+# 공개 운영 앱 후보를 찾은 뒤, 로컬 스캐너가 Supabase 지문과 민감정보 후보를 판별합니다.
+
+# Lovable (공식 문서상 Supabase 백엔드를 지원하는 공개 앱 배포 도메인)
+site:lovable.app "supabase.co" -inurl:blog -inurl:docs -inurl:tutorial -template -github
+site:lovable.app ("powered by supabase" OR "built with supabase") -inurl:blog -inurl:docs -template
+site:lovable.app "supabase.co" ("magic link" OR "email not confirmed" OR "invalid login credentials") -inurl:blog -inurl:docs -template
+site:lovable.app "supabase.co" ("book appointment" OR "available slots" OR "manage bookings") -inurl:blog -inurl:docs -template
+site:lovable.app "supabase.co" ("order history" OR "track order" OR "manage inventory") -inurl:blog -inurl:docs -template
+site:lovable.app "supabase.co" ("customer portal" OR "support ticket" OR "manage customers") -inurl:blog -inurl:docs -template
+site:lovable.app "supabase.co" ("event registration" OR "member directory" OR "manage attendees") -inurl:blog -inurl:docs -template
+site:lovable.app "supabase.co" ("upload document" OR "team workspace" OR "shared files") -inurl:blog -inurl:docs -template
+
+# Vercel
+site:vercel.app "supabase.co" -inurl:blog -inurl:docs -inurl:tutorial -template -github
+site:vercel.app ("powered by supabase" OR "built with supabase") -inurl:blog -inurl:docs -template
+site:vercel.app "supabase.co" ("magic link" OR "email not confirmed" OR "invalid login credentials") -inurl:blog -inurl:docs -template
+site:vercel.app "supabase.co" ("book appointment" OR "available slots" OR "manage bookings") -inurl:blog -inurl:docs -template
+site:vercel.app "supabase.co" ("order history" OR "track order" OR "manage inventory") -inurl:blog -inurl:docs -template
+site:vercel.app "supabase.co" ("customer portal" OR "support ticket" OR "manage customers") -inurl:blog -inurl:docs -template
+site:vercel.app "supabase.co" ("event registration" OR "member directory" OR "manage attendees") -inurl:blog -inurl:docs -template
+site:vercel.app "supabase.co" ("upload document" OR "team workspace" OR "shared files") -inurl:blog -inurl:docs -template
+
+# Netlify
+site:netlify.app "supabase.co" -inurl:blog -inurl:docs -inurl:tutorial -template -github
+site:netlify.app ("powered by supabase" OR "built with supabase") -inurl:blog -inurl:docs -template
+site:netlify.app "supabase.co" ("magic link" OR "email not confirmed" OR "invalid login credentials") -inurl:blog -inurl:docs -template
+site:netlify.app "supabase.co" ("book appointment" OR "available slots" OR "manage bookings") -inurl:blog -inurl:docs -template
+site:netlify.app "supabase.co" ("order history" OR "track order" OR "manage inventory") -inurl:blog -inurl:docs -template
+site:netlify.app "supabase.co" ("customer portal" OR "support ticket" OR "manage customers") -inurl:blog -inurl:docs -template
+site:netlify.app "supabase.co" ("event registration" OR "member directory" OR "manage attendees") -inurl:blog -inurl:docs -template
+site:netlify.app "supabase.co" ("upload document" OR "team workspace" OR "shared files") -inurl:blog -inurl:docs -template
+
+# Cloudflare Pages
+site:pages.dev "supabase.co" -inurl:blog -inurl:docs -inurl:tutorial -template -github
+site:pages.dev ("powered by supabase" OR "built with supabase") -inurl:blog -inurl:docs -template
+site:pages.dev "supabase.co" ("magic link" OR "email not confirmed" OR "invalid login credentials") -inurl:blog -inurl:docs -template
+site:pages.dev "supabase.co" ("book appointment" OR "available slots" OR "manage bookings") -inurl:blog -inurl:docs -template
+site:pages.dev "supabase.co" ("order history" OR "track order" OR "manage inventory") -inurl:blog -inurl:docs -template
+site:pages.dev "supabase.co" ("customer portal" OR "support ticket" OR "manage customers") -inurl:blog -inurl:docs -template
+site:pages.dev "supabase.co" ("event registration" OR "member directory" OR "manage attendees") -inurl:blog -inurl:docs -template
+site:pages.dev "supabase.co" ("upload document" OR "team workspace" OR "shared files") -inurl:blog -inurl:docs -template
+
+# Firebase Hosting
+site:web.app "supabase.co" -inurl:blog -inurl:docs -inurl:tutorial -template -github
+site:web.app ("powered by supabase" OR "built with supabase") -inurl:blog -inurl:docs -template
+site:web.app "supabase.co" ("magic link" OR "email not confirmed" OR "invalid login credentials") -inurl:blog -inurl:docs -template
+site:web.app "supabase.co" ("book appointment" OR "available slots" OR "manage bookings") -inurl:blog -inurl:docs -template
+site:web.app "supabase.co" ("order history" OR "track order" OR "manage inventory") -inurl:blog -inurl:docs -template
+site:web.app "supabase.co" ("customer portal" OR "support ticket" OR "manage customers") -inurl:blog -inurl:docs -template
+site:web.app "supabase.co" ("event registration" OR "member directory" OR "manage attendees") -inurl:blog -inurl:docs -template
+site:web.app "supabase.co" ("upload document" OR "team workspace" OR "shared files") -inurl:blog -inurl:docs -template
+
+# Firebase legacy domain
+site:firebaseapp.com "supabase.co" -inurl:blog -inurl:docs -inurl:tutorial -template -github
+site:firebaseapp.com ("powered by supabase" OR "built with supabase") -inurl:blog -inurl:docs -template
+site:firebaseapp.com "supabase.co" ("magic link" OR "email not confirmed" OR "invalid login credentials") -inurl:blog -inurl:docs -template
+site:firebaseapp.com "supabase.co" ("book appointment" OR "available slots" OR "manage bookings") -inurl:blog -inurl:docs -template
+site:firebaseapp.com "supabase.co" ("order history" OR "track order" OR "manage inventory") -inurl:blog -inurl:docs -template
+site:firebaseapp.com "supabase.co" ("customer portal" OR "support ticket" OR "manage customers") -inurl:blog -inurl:docs -template
+site:firebaseapp.com "supabase.co" ("event registration" OR "member directory" OR "manage attendees") -inurl:blog -inurl:docs -template
+site:firebaseapp.com "supabase.co" ("upload document" OR "team workspace" OR "shared files") -inurl:blog -inurl:docs -template
+
+# Render
+site:onrender.com "supabase.co" -inurl:blog -inurl:docs -inurl:tutorial -template -github
+site:onrender.com ("powered by supabase" OR "built with supabase") -inurl:blog -inurl:docs -template
+site:onrender.com "supabase.co" ("magic link" OR "email not confirmed" OR "invalid login credentials") -inurl:blog -inurl:docs -template
+site:onrender.com "supabase.co" ("book appointment" OR "available slots" OR "manage bookings") -inurl:blog -inurl:docs -template
+site:onrender.com "supabase.co" ("order history" OR "track order" OR "manage inventory") -inurl:blog -inurl:docs -template
+site:onrender.com "supabase.co" ("customer portal" OR "support ticket" OR "manage customers") -inurl:blog -inurl:docs -template
+site:onrender.com "supabase.co" ("event registration" OR "member directory" OR "manage attendees") -inurl:blog -inurl:docs -template
+site:onrender.com "supabase.co" ("upload document" OR "team workspace" OR "shared files") -inurl:blog -inurl:docs -template
+
+# Railway
+site:railway.app "supabase.co" -inurl:blog -inurl:docs -inurl:tutorial -template -github
+site:railway.app ("powered by supabase" OR "built with supabase") -inurl:blog -inurl:docs -template
+site:railway.app "supabase.co" ("magic link" OR "email not confirmed" OR "invalid login credentials") -inurl:blog -inurl:docs -template
+site:railway.app "supabase.co" ("book appointment" OR "available slots" OR "manage bookings") -inurl:blog -inurl:docs -template
+site:railway.app "supabase.co" ("order history" OR "track order" OR "manage inventory") -inurl:blog -inurl:docs -template
+site:railway.app "supabase.co" ("customer portal" OR "support ticket" OR "manage customers") -inurl:blog -inurl:docs -template
+site:railway.app "supabase.co" ("event registration" OR "member directory" OR "manage attendees") -inurl:blog -inurl:docs -template
+site:railway.app "supabase.co" ("upload document" OR "team workspace" OR "shared files") -inurl:blog -inurl:docs -template

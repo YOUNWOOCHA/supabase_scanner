@@ -391,7 +391,8 @@ def inspect_url(session, url, rules, delay):
         summary.update(status="SKIPPED", note="텍스트 크기 한도 초과")
         return [], summary
 
-    findings = scan_text(response.text, url, "html", rules)
+    # 상세 CSV에서 분석자가 공개 증거 위치를 다시 찾을 수 있도록 실제 리소스 URL을 기록한다.
+    findings = scan_text(response.text, url, response.url, rules)
     origin = urlparse(response.url).netloc.lower()
     scripts = []
     for src in re.findall(r'<script[^>]+src=["\']([^"\']+)["\']', response.text, re.I):
@@ -410,7 +411,7 @@ def inspect_url(session, url, rules, delay):
         except requests.RequestException:
             continue
         summary["js_checked"] += 1
-        findings.extend(scan_text(js.text, url, "same-origin-js", rules))
+        findings.extend(scan_text(js.text, url, js_url, rules))
 
     # 동일 소스·유형·값 해시 중복 제거
     findings = list({f["evidence_hash"]: f for f in findings}.values())
